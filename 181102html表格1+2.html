@@ -1,0 +1,340 @@
+<!DOCTYPE html> <!--并不是标签，声明文档类型，必须放第一行-->
+<html>
+
+<head>
+	<!--head标签中的所有不会展示在网页中-->
+    <meta http-equiv="Content" content="text/html;charse=utf-8"/>
+                         <!--在head标签之间加入网页编码设置可以解决乱码-->
+
+	<title>htlm表格</title>
+</head>
+
+<body> 
+       <!--table：表格；tr：行；td：单元格（列），依次包含关系-->
+       <!--有几行就写几个tr，几列就都写几个td-->
+       <!--默认情况无边框表格，所以要在table处加边框属性：border-->
+       <!--例如：创建2行3列表格-->
+       <table border="1">
+              <tr>
+                   <td>第一行第一列</td>
+                   <td>第一行第二列</td>
+                   <td>第一行第三列</td>
+              </tr>
+                 
+              <tr>
+                   <td>第二行第一个单元格</td>
+                   <td>第二行第二个单元格</td>
+                   <td>第二行第三个单元格</td>
+              </tr>
+       </table>   
+
+
+       <hr/>
+       <br/><br/><br/>
+       <p>在上方表格基础上增/删行与列</p>
+       <img src="htmlbg1.jpg" alt="最终效果" width="80%" height="50%"/>
+       <!--增加、删除行/列-->
+       <!--增加、删除一整行/每一行的列都加或者删-->
+       <!--这块知识这里不作演示-->
+
+
+
+       </hr>
+       </br>
+       <br/>
+       <table border="1" width="500px">   <!--只有用width定义了表格（足够）宽才能看到th呈现的效果居中-->
+       	      <caption>表格标题，居中显示</caption>   <!--caption带标题的表格，紧跟table后面，只能写一个-->
+              <tr>
+              	   <th>第一行第一列</th>    <!--th要在tr里，用来定义表头格，其内容居中、加粗显示-->
+                   <td>第一行第二列</td>    <!--td也在tr里，用来定义普通格，其内容左对齐、不加粗-->
+                   <td>第一行第三列</td>
+              </tr>
+                 
+              <tr>
+                   <th>第二行第一个单元格</th>
+                   <td>第二行第二个单元格</td>
+                   <td>第二行第三个单元格</td>
+              </tr>
+       </table>   
+
+
+
+       </hr>
+       </br>
+       <br/>
+       <!--带结构的表格-->
+       <!--用于表格很长需加载时间长，这可不等全部加载，从上到下加载下来，（因为浏览器执行文件是从上到下顺序）用户体验好-->
+       <!--表格结构标签，用来优化显示，加载一部分显示一部分-->
+       <!--建议thead、tbody、tfoot同时使用-->
+       <!--thead包着的总是显示在最上面，tfoot总是最下面，就算把tfoot的代码搬放到上面也不会最先显示-->
+       <!--这三个标签不会影响表格的布局,仅仅是划分了表格，边加载边显示-->
+       <table border="1" width="500px">   
+       	      <caption>表格标题，居中显示</caption>
+       	      <thead> 
+              <tr>
+              	   <th>表头内容</th>    
+                   <td>表头内容</td>    
+                   <td>表头内容</td>
+              </tr>
+              </thead>
+              
+              <tbody>   
+              <tr>
+                   <th>主体</th>
+                   <td>主体</td>
+                   <td>主体</td>
+              </tr>
+              </tbody>
+
+              <tfoot>
+              <tr>
+                   <th>脚注</th>
+                   <td>脚注</td>
+                   <td>脚注</td>
+              </tr>
+              </tfoot>
+
+       </table>   
+
+
+
+       <!--table属性-->
+       <!--
+       width="..px/..%" 规定表格的宽度(不写这个的话默认是内容填充的宽度)
+       align="left/center/right" 表格相对周围元素的对齐方式
+       border="1/2/3..." 规定表格边框的宽度
+       bgcolor="rgb（x,x,x）/#xxxxxx/colorname" 表格背景颜色
+       Cellpadding="..px/..%" 单元沿与其内容之间的空白（不写这个的话内容默认是紧挨着左边的）
+       Cellspacing="..px/..%" 单元格之间的空白（不写这个的话默认是有空隙的，设置成0就单元格之间没有空）
+       frame="属性值" 规定外侧边框的哪个部分是可见的
+       rules="属性值" 规定内侧边框的哪个部分是可见的
+
+       frame="void" 不显示外侧边框
+            ="above" 显示上部的外侧边框
+            ="below" 显示下部的外侧边框
+            ="hsides" 显示上部和下部的外侧边框
+            ="vsides" 显示左边和右边的外侧边框
+            ="lhs" 显示左边的外侧边框
+            ="rhs" 显示右边的外侧边框
+            ="box" 在所有四个边上显示外侧边框
+            ="border" 在所有四个边上显示外侧边框
+
+       rules="none" 没有线条
+            ="groups" 位于行组和列祖之间的线条
+            ="rows" 位于行之间的线条
+            ="cols" 位于列之间的线条
+            ="all" 位于行和列之间的线条
+        -->
+
+       <br/>
+       <br/>
+       <hr/>
+       <img src="htmlbgsx.jpg" alt="表格属性" width="80%" height="50%"/>
+
+       <br/>
+       <br/>
+
+       <table border="6" width="500px" bgcolor="#f2f2f2" cellspacing="0" cellpadding="10px" align="center" frame="box" rules="rows">   
+       	      <caption>表格标题，居中显示</caption>
+       	      <thead> 
+              <tr>
+              	   <th>表头内容</th>    
+                   <td>表头内容</td>    
+                   <td>表头内容</td>
+              </tr>
+              </thead>
+              
+              <tbody>   
+              <tr>
+                   <th>主体</th>
+                   <td>主体</td>
+                   <td>主体</td>
+              </tr>
+              </tbody>
+
+              <tfoot>
+              <tr>
+                   <th>脚注</th>
+                   <td>脚注</td>
+                   <td>脚注</td>
+              </tr>
+              </tfoot>
+
+       </table>   
+
+
+       <br/>
+       <hr/>
+       <!--属性-->
+       <!--
+           tr标签属性：
+
+             行内容的水平对齐
+             align="left"
+                  ="center"
+                  ="right"
+                  ="justify"
+                  ="char"
+
+             行内容的垂直对齐
+             valign="top"
+                   ="middle"
+                   ="bottom"
+                   ="baseline"
+
+             行的背景颜色
+             bgcolor="rgb(x,x,x)"
+                    ="#xxxxxx"
+                    ="colorname"
+            
+            ——————————————————————————————————————————————————————————
+
+            td和th标签属性：
+
+             （上方tr标签属性都可，只不过含义是单元格内容的...+以下的都是）
+
+              单元格的宽度
+              width="..%"
+                   ="pixels"
+              
+              单元格的高度
+              height="..%"
+                    ="pixels"
+
+            ——————————————————————————————————————————————————————————
+
+            thead、tbody和tfoot标签属性：
+
+             thead、tbody、tfoot内容的水平对齐
+             align="left"
+                  ="center"
+                  ="right"
+                  ="justify"
+                  ="char"
+
+             thead、tbody、tfoot内容的垂直对齐
+             valign="top"
+                   ="middle"
+                   ="bottom"
+                   ="baseline"
+       -->
+       <table border="6" width="500px" bgcolor="#f2f2f2" cellspacing="0" cellpadding="10px" align="center" frame="box" rules="rows">   
+       	      <caption>表格标题，居中显示</caption>
+       	      <thead align="left" valign="bottom"> 
+              <tr bgcolor="rbg(200,100,50)">
+              	   <th>表头内容</th>    
+                   <td bgcolor="#b8cce4">表头内容</td>    
+                   <td>表头内容</td>
+              </tr>
+              </thead>
+               
+              <tbody>   
+              <tr bgcolor="green" valign="bottom">      <!--已经给行设置了背景对齐方式就没必要给单元格设置了-->
+                   <th height="60px">主体</th>
+                   <td>主体</td>
+                   <td>主体</td>
+              </tr>
+              </tbody>
+
+              <tfoot>
+              <tr bgcolor="#d8e4bc" align="right">
+                   <th>脚注</th>
+                   <td>脚注</td>
+                   <td>脚注</td>
+              </tr>
+              </tfoot>
+
+       </table>   
+
+
+
+       <br/>
+       <br/>
+       <hr/>
+       <!--跨列标签：colspan-->
+       <!--打横合并了几个就写数字几，并且单元格得少（了几个-1）个-->
+       <table border="1">
+              <tr>
+                   <td colspan="2">第一行第一列</td>
+                   <!-- <td>第一行第二列</td> 这一行要删除，是合并了多余的-->
+                   <td>第一行第三列</td>
+              </tr>
+                 
+              <tr>
+                   <td>第二行第一个单元格</td>
+                   <td>第二行第二个单元格</td>
+                   <td>第二行第三个单元格</td>
+              </tr>
+       </table>   
+
+       
+       <br/>
+       <br/>
+       <hr/>
+       <!--跨行标签：rowspan-->
+       <!--打竖合并了几个就写数字几，并且相应行的单元格得少（了几个-1）个-->
+       <table border="1">
+              <tr>
+                   <td>第一行第一列</td>
+                   <td>第一行第二列</td>
+                   <td>第一行第三列</td>
+              </tr>
+                 
+              <tr>
+                   <td>第二行第一个单元格</td>
+                   <td rowspan="2">第二行第二个单元格</td>
+                   <td>第二行第三个单元格</td>
+              </tr>
+
+              <tr>
+                   <td>第三行第一列</td>
+                   <!-- <td>第三行第二列</td> 应该删这一行的这个单元格才跨行（合并）正确-->
+                   <td>第三行第三列</td>
+              </tr>
+
+              <!--未呈现知识点：前面的跨行或者跨列了，就算读成一个。比如第一个、第二个、第三个，其中第一个第二个合并了，做第四个的时候，前面只有两个，第四个本身是第三个了-->
+       </table>   
+
+
+
+       <br/>
+       <br/>
+       <hr/>
+       <!--表格嵌套-->
+       <!--嵌入表格说明：1、完整表格结构 2.放到td标签中-->
+       <table border="1" cellspacing="0">
+              <tr>
+                  <td>2014</td>
+                  <td>2015</td>
+                  <td>2016</td>
+              </tr>
+
+              <tr>
+                  <td>
+                  	  
+                  	  <table border="1px" cellspacing="0">
+                  	  	<tr>
+                  	  		<td>上半年</td>
+                  	  		<td>下半年</td>
+                  	  	</tr>
+
+                  	  	<tr>
+                  	  		<td>8000</td>
+                  	  		<td>9000</td>
+                  	  	</tr>
+
+                  	  </table>
+
+
+                  </td>
+
+                  <td>10000</td>
+                  <td>12000</td>
+              </tr>
+       </table>
+       
+
+
+</body>
+
+</html>
